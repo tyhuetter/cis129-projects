@@ -30,10 +30,9 @@ print('-------------')
 print('Total: $ ', totalcost, '')
 print('***********************************')
 print(' ')
-print('Thank you for stopping by, have a wonderful day!')
+=======
+print('Thank you stopping by, have a wonderful day')
 print('    ')
 print("USE THIS CODE FOR A FREE COFFEE NEXT VISIT: '7dclts53i'")
-
-
 
 
