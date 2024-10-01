@@ -1,35 +1,39 @@
 #Ty Huetter
 #September 30th, 2024
-#The program is designed to calculate the amount of money that is made
-# from recycling and returning bottles
+#The program is designed to calculate the amount of money that is made from recycling and returning bottles
 
-#setting up variables
-counter = 0
-total_bottles = 0
-today_bottles = 0
-total_payout = 0
+
+#setting up variables/initialization phase 
 keep_going = "y"
 NBR_OF_DAYS = 7
+PAYOUT_PER_BOTTLE = .10 #these have to be defined before the while loop
 
-while "y":
+#processing phase/setting up the loop
+while keep_going == "y":
+    counter = 1
+    total_bottles = 0 #setting these variables to 0 means that they will change during the processing of the loop
+    today_bottles = 0
+    total_payout = 0
+    while counter <= NBR_OF_DAYS: #originally, I had these 2 while statements flipped, which created confusion and made the code not work
+        print("Enter number of bottles for day #", counter, ":")
+        today_bottles = int(input(""))
+        total_bottles = total_bottles + today_bottles
+        counter = counter + 1
+    total_payout = float(f'{total_bottles * PAYOUT_PER_BOTTLE:.2f}') #better to make total_payout a float here then in printing statement
+
+#termination stage, getting the outputs
+    print("The total number of bottles collected is", total_bottles, "")
+    print("The total paid out is $", total_payout, "")
+#probably could add print('') for blank line, but no need to
     print("Do you want to enter another week's worth of data?")
-    input("(Enter y or n):")
-    if input == "y":
-        while counter < NBR_OF_DAYS:
-            print("Enter number of bottles returned for day #", counter, ":")
-            input("How many bottles returned?")
-            input = today_bottles
-    break
-
-NBR_OF_DAYS = 7
-counter = 1
-PAYOUT_PER_BOTTLE = 0.10
-total_bottles = 0
-today_bottles = 0
-total_bottles = total_bottles + today_bottles
-total_payout = total_bottles * PAYOUT_PER_BOTTLE
-counter = counter + 1
+    keep_going = input("(Enter y or n):") #keep_going cannot just equal input, it must be the string too
+            
+    
+    
+    
+   
 
 
-
+    
+        
 
