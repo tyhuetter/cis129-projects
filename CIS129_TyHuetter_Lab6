@@ -1,0 +1,26 @@
+#define variables
+dogs_left = 0
+buns_left = 0
+dogs_per_package = 10
+buns_per_package = 8
+#make function to calculate total hot dogs 
+def get_total_hot_dogs():
+    """Calculate the number of total hot dogs"""
+    attendees = int(input("Enter the number of people attending the cookout: "))
+    number_of_dogs = int(input("Enter the number of hot dogs for each person: "))
+    total_dogs_and_buns = attendees * number_of_dogs
+    return total_dogs_and_buns #must use return so gettotalhotdogs is set to something
+#otherwise, function will make an error in next line
+#calculate how many leftover buns and hotdogs
+#calculate how many packs of hot dogs and buns needed with ceiling statement (import math)
+total_dogs_and_buns = get_total_hot_dogs()
+import math
+dogs_left = dogs_per_package - total_dogs_and_buns % dogs_per_package
+buns_left = buns_per_package - total_dogs_and_buns % buns_per_package
+min_dogs = math.ceil(total_dogs_and_buns / dogs_per_package)
+min_buns = math.ceil(total_dogs_and_buns / buns_per_package)
+#display results of each of the min packs and leftover buns/hotdogs
+print("Minimum packages of hot dogs needed: ", min_dogs)
+print("Minimum packages of hot dog buns needed: ", min_buns)
+print("Hot dogs left over: ", dogs_left)
+print("hot dog buns left over: ", buns_left)
