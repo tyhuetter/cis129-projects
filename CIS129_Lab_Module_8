@@ -1,0 +1,23 @@
+#make function to determine truth of palindrome
+def is_palindrome(string):
+    string = string.lower().replace(' ', '')
+    return string == string[::-1]
+#make stack and add strings to it by using append statement
+stack = []
+stack.append('radar')
+stack.append('racecar')
+stack.append('mammals')
+stack.append('was it a cat i saw')
+stack.append('pizza')
+stack.append('tacocat')
+#print pops of stack 
+print(is_palindrome(stack.pop())) #returns true
+print(is_palindrome(stack.pop())) #returns true
+print(is_palindrome(stack.pop())) #returns false
+print(is_palindrome(stack.pop())) #returns true
+print(is_palindrome(stack.pop())) #returns false
+print(is_palindrome(stack.pop())) #returns true
+
+
+
+    
