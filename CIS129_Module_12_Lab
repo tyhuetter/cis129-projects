@@ -1,0 +1,56 @@
+#Ty Huetter
+#CIS129
+#Module 12 Lab
+#November 15, 2024
+#This lab creates a pet class where users can input their pet name, age, and type and the program will store it
+
+
+
+#Main function
+def main():
+    #Ask the user for pet input
+    name = input("Enter the pet's name: ")
+    animal_type = input("Enter what type of animal the pet is: ")
+    age = int(input("Enter the pet's age: "))
+    # Create an object from the Pet class
+    pets = Pet(name, animal_type, age)
+    #Print out statement that call the get functions for the name, type, and age
+    print("Your pet's name: ", pets.get_name(name),"")
+    print("Your pet's type: ", pets.get_type(animal_type),"")
+    print("Your pet's age: ", pets.get_age(age), "")
+
+#Creating a pet class for the object
+class Pet:
+
+    
+    def __init__(self, name, animal_type, age):
+        self.__name = name
+        self.__animal_type = animal_type
+        self.__age = age
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_type(self, animal_type):
+        self.__animal_type = animal_type
+
+    def set_age(self, age):
+        self.__age = age
+
+    def get_name(self, name):
+        return self.__name
+
+    def get_type(self, animal_type):
+        return self.__animal_type
+
+    def get_age(self, age):
+        return self.__age
+
+main()
+
+
+
+
+    
+    
+    
