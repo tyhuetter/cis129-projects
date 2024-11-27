@@ -6,8 +6,8 @@ with open('grades.txt', mode='w') as grades:
     while student_id != -1:
         name = input("Enter the student's name (First and Last): ")
         grade = int(input("Enter a grade: "))
-        grades.write(name)
-        grades.write(str(grade))
+        grade_book = name + " " + str(grade) + " "
+        grades.write(grade_book)
         student_id = int(input("Enter student's id number, -1 to cancel or stop: "))
 
 
@@ -17,7 +17,15 @@ with open('grades.txt', mode='r') as grades:
     for record in grades:
         grade_counter += 1
         total += grade
-        record.split(name, grade)
-        print(grades)
+        file_print = record.split(grade_book)
+        print(file_print)
     average = total / grade_counter
-    print(total, grade_counter, average)
+    print(f'The total is {total}. The amount of grades is {grade_counter}. The average is {average}')
+    
+    
+    
+
+    
+                   
+               
+    
