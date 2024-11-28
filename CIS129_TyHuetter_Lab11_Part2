@@ -1,0 +1,48 @@
+#Ty Huetter
+#CIS129
+#November 27th, 2024
+#Module 11 Lab Part 2 (9.3)
+#This lab writes inputted student names and three of their exam scores to a csv file with formatting of #,#,#,#
+
+import csv #need this for csv formatting and file type
+
+SENTINEL = -1 #set sentinel value
+#open writing file
+with open('grades.csv', mode='w', newline='') as grades:
+    try: #this is done for ValueError exceptions with integer inputs
+        student_id = int(input("Enter student's id number, -1 to stop or cancel: "))
+    except ValueError:
+        print("Enter numbers only")
+    else:
+        writer = csv.writer(grades)
+    #set constant values
+    #while loop
+        while student_id != -1: #create loop again to append multiple values to a file without it closing
+            try:
+                first_name = input("Enter student's first name: ")
+                last_name = input("Enter student's last name: ")
+                exam_1 = float(input("Enter student's exam 1 test score: ")) #should be floats because many times grades have decimals
+                exam_2 = float(input("Enter student's exam 2 test score: "))
+                exam_3 = float(input("Enter student's exam 3 test score: "))
+            except ValueError:
+                print("Enter numbers only")
+            else:
+                grade_book = [first_name, last_name, exam_1, exam_2, exam_3] #easier to append a list to a file than multiple variables in different statements
+                writer.writerow(grade_book) #append grades 
+                try:
+                    student_id = int(input("Enter student's id number, -1 to stop or cancel: "))
+                except ValueError:
+                    print("Enter numbers only")
+#open read file
+with open('grades.csv', mode='r') as grades:
+    reader = csv.reader(grades)
+    for record in grades: #before, I had "for record in reading" and that messed up the formatting
+        file_print = record
+        print(f'{file_print}')
+
+        
+
+
+    
+    
+    
